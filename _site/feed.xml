@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-06-08T17:38:14+05:30</updated><id>http://localhost:4000/feed.xml</id><title type="html">Abhishek Kumar</title><subtitle>A blog about technology (mostly Deep Learning) and stuff related to me (mostly travelling)</subtitle><entry><title type="html">An insight into Neural network Activation functions</title><link href="http://localhost:4000/activation-function-in-neural-network/" rel="alternate" type="text/html" title="An insight into Neural network Activation functions" /><published>2016-12-17T22:48:00+05:30</published><updated>2016-12-17T22:48:00+05:30</updated><id>http://localhost:4000/activation-function-in-neural-network</id><content type="html" xml:base="http://localhost:4000/activation-function-in-neural-network/">&lt;h1 id=&quot;a-bit-of-introduction&quot;&gt;A bit of Introduction&lt;/h1&gt;
+
+&lt;p class=&quot;text-center&quot;&gt;&lt;img src=&quot;/simple-neuron.png&quot; alt=&quot;Structure of a simple neuron&quot; /&gt;&lt;/p&gt;
+&lt;figcaption class=&quot;caption&quot;&gt;Structure of a simple neuron&lt;/figcaption&gt;
+
+&lt;p&gt;The basic building block of a neural network is a processing-unit which is linked to n input-units through a set of n directed connections. The single unit model is characterized by:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;A threshold input value denoted by : x&lt;sub&gt;i&lt;/sub&gt;.&lt;/li&gt;
+  &lt;li&gt;A univariate activation function denoted in the figure&lt;/li&gt;
+  &lt;li&gt;A vector of “weights,” denoted by w&lt;sub&gt;ij&lt;/sub&gt;&lt;/li&gt;
+  &lt;li&gt;And ofcourse the output value.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;But for better understanding lets discuss very briefly the biological system from which a large portion of this area has been inspired b&lt;/p&gt;
+
+&lt;p class=&quot;text-center&quot;&gt;&lt;img src=&quot;/neuron.png&quot; alt=&quot;A image of a biological neuron&quot; title=&quot;Toy example&quot; /&gt;&lt;/p&gt;
+
+&lt;p class=&quot;text-center&quot;&gt;&lt;img src=&quot;/neuron_model.png&quot; alt=&quot;A mathematical model of a Neuron&quot; title=&quot;Toy example&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The basic computational unit of the brain is a neuron. Approximately 86 billion neurons can be found in the human nervous system and they are connected with approximately 10^14 - 10^15 synapses. The diagram below shows a cartoon drawing of a biological neuron (left) and a common mathematical model (right). Each neuron receives input signals from its dendrites and produces output signals along its (single) axon. The axon eventually branches out and connects via synapses to dendrites of other neurons. In the computational model of a neuron, the signals that travel along the axons (e.g. x&lt;sub&gt;0&lt;/sub&gt;) interact multiplicatively (e.g. w&lt;sub&gt;0&lt;/sub&gt;x&lt;sub&gt;0&lt;/sub&gt;) with the dendrites of the other neuron based on the synaptic strength at that synapse (e.g. w&lt;sub&gt;0&lt;/sub&gt;).&lt;/p&gt;
+
+&lt;p&gt;The idea is that the synaptic strengths (the weights w) are learnable and control the strength of influence (and its direction: excitory (positive weight) or inhibitory (negative weight)) of one neuron on another. In the basic model, the dendrites carry the signal to the cell body where they all get summed. If the final sum is above a certain threshold, the neuron can fire, sending a spike along its axon. In the computational model, we assume that the precise timings of the spikes do not matter, and that only the frequency of the firing communicates information. Based on this rate code interpretation, we model the firing rate of the neuron with an activation function f, which represents the frequency of the spikes along the axon.&lt;/p&gt;
+
+&lt;p&gt;So, in simple words a Activation fucntion of a node in terms of Neural Network defines the output of the node, given a set of predetermined inputs.&lt;/p&gt;
+
+&lt;h1 id=&quot;history-of-activation-function&quot;&gt;History of Activation function.&lt;/h1&gt;
+
+&lt;p&gt;The Mark 1 Perceptron machine was the first implementation of the perceptron algorithm, the first learning algorithm for neural network. This machine used a unit step function as a kind of “Activation Function”(No such term existed at that time.) But there was no concept of loss function and no concept of back propagation.
+Then in late 60’s a paper came out titled &lt;a href=&quot;http://isl-www.stanford.edu/~widrow/papers/bc1995perceptronsadalines.pdf&quot;&gt;“Perceptrons, Adalines and Backpropagation”&lt;/a&gt;. This was the first multi layer perceptron network. Then in 1986 a research paper by Rumelhart came them emphasised the use of back propagation and after this the concept of back propagation became very popular, the paper also talked about loss function so this was a major advancement in Neural Network.
+After this the domain of Neural Network remained quite for many many years. Though many small development took place in these year but it was late 2000’s that boosted the world of Neural Network.
+Here are links of some research paper that happened in the 2000’s, (especially have a look at the Microsoft research paper of 2012)&lt;/p&gt;
+
+&lt;h1 id=&quot;commonly-used-activation-function&quot;&gt;Commonly used Activation Function:&lt;/h1&gt;
+
+&lt;h2 id=&quot;sigmoid-activation-function&quot;&gt;&lt;strong&gt;Sigmoid activation function&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;A sigmoid function has a vast history and for a very long period of time Sigmoid was used and preferred over the rest it had a nice interpretation as the firing rate of a neuron. The sigmoid is a mathematical function having an “S” shaped curve (sigmoid curve). Often, sigmoid function refers to the special case of the logistic function shown in the first figure and defined by the formula&lt;/p&gt;
+
+&lt;div&gt;
+  $$\frac{n!}{k!(n-k)!}$$
+&lt;/div&gt;
+
+&lt;p&gt;\begin{align&lt;em&gt;}
+  &amp;amp; {\displaystyle S(t)={\frac {1}{1+e^{-t}}}.}
+\end{align&lt;/em&gt;}
+$$&lt;/p&gt;
+
+&lt;p&gt;The sigmoid non-linearity has the mathematical form &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+\begin{align*} &amp; \sigma(x) = 1/(1+e^{-x}) \end{align*} %]]&gt;&lt;/script&gt; and is shown in the image above on the left.&lt;/p&gt;
+
+&lt;p&gt;The sigmoid function takes a real-valued number and “squashes” it into range between 0 and 1. And this “Squasing” technique is one of the major drawbacks of the sigmoid function. In particular, large negative numbers become 0 and large positive numbers become 1. Let’s see the major drawback of the Sigmoid activation function in detail:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Sigmoids saturate and kill gradients:&lt;/strong&gt; I just mentioned that the sigmoid function squashes a number in the range of 0 and 1 and as a result the neuron’s activation saturates at wither 1 or 0. See the sigmoid curve once again, at large positive negative values the gradient is almost 0. Now during Backpropagation this gradients are supposed to be multiplied by the local gradient at each neuron and in this case the output of backpropagation will almost come out to be 0 (due to very small gradient value). Therefore, if the local gradient is very small, it will effectively “kill” the gradient and almost no signal will flow through the neuron to its weights and recursively to its data.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Sigmoid outputs are not zero-centered:&lt;/strong&gt; Many a times (almost everytime) it happens that the neuron receives data that is not zero-centered. In that case if the data coming into the neuron is always positive, the gradient on the weights ‘w’ will always be either positive or all negative during backpropagation(depending upon the gradient). Due to this the gradient updates will be very random (zig-zag shape to be precise) which is very undesirable.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Slow convergence:&lt;/strong&gt; The sigmoid activation function has a very slow convergence. So the initialization of the weights become very important if we are using the sigmoid activation function. (The reason can be inferred from the above two points), if the initial weights are too large then most of the neurons would saturate and the network will barely learn. (Tip: Start with a very small ‘w’)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Expensive:&lt;/strong&gt; The sigmoid function uses the exponential function, which is computationally expensive as compared to other activation functions.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Here is a toy example of an implementation of Sigmoid&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;numpy&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# sigmoid function with forward and back prop
+&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;nonlin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;deriv&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;False&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;deriv&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;exp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+    
+&lt;span class=&quot;c1&quot;&gt;# input dataset
+# feel free to play with the imput dataset
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;X&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;  &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
+                &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
+                &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
+                &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+    
+&lt;span class=&quot;c1&quot;&gt;# output dataset            
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]])&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;T&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# seed random numbers to make calculation
+# deterministic (just a good practice)
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;random&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;seed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# initialize weights randomly with mean 0 --&amp;gt;
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;syn0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;random&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;random&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;iter&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;xrange&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;# forward propagation
+&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;l0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;X&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;l1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nonlin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;l0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;syn0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;# how much did we miss?
+&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;l1_error&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;l1&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;# multiply how much we missed by the 
+&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;# slope of the sigmoid at the values in l1
+&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;l1_delta&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;l1_error&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nonlin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;l1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;# update weights
+&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;syn0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;l0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;l1_delta&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Output After Training:&quot;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;l1&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;strong&gt;Verdict:&lt;/strong&gt; Don’t ever use Sigmoid, never ever, never ever ever….&lt;/p&gt;
+
+&lt;h2 id=&quot;tanh-activation-function&quot;&gt;&lt;strong&gt;Tanh Activation function&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;p&gt;The tanh non-linearity is shown on the image below. Tanh is nothing but &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+\begin{align*} &amp; \textrm{tanh}(x) = 2\sigma(2x) - 1 \end{align*} %]]&gt;&lt;/script&gt;. Tanh came into the picture with the goal of answering one of the problems of Sigmoid activation function(Point no 2 of Sigmoid). It is zero-centered and squashes a real-valued number to the range [-1, 1]. Like the sigmoid neuron, its activations saturate, but unlike the sigmoid neuron its output is zero-centered. Although tanh activation function is nothing but 2*sigmoid - 1, but for a better understanding of the advantages of tanh you can have a look at &lt;a href=&quot;http://yann.lecun.com/exdb/publis/pdf/lecun-98b.pdf&quot;&gt;this paper&lt;/a&gt;&lt;/p&gt;
+
+&lt;p class=&quot;text-center&quot;&gt;&lt;img src=&quot;/tanh.png&quot; alt=&quot;A tanh graph, see the range [-1, 1]&quot; title=&quot;Toy example&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Verdict:&lt;/strong&gt; Always prefer tanh non-linearity over the sigmoid nonlinearity. But you should avoid using Tanh too. (as there are more problems to be addressed to)&lt;/p&gt;
+
+&lt;h2 id=&quot;relu-activation-function&quot;&gt;&lt;strong&gt;ReLU Activation function&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;p&gt;The Rectified Linear Unit is one of the most popular and widely used activation function. The ReLU is a simple thresholding function f(x)=max(0,x). Let’s see the pros and cons of the ReLU activation function.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Faster Convergence rate:&lt;/strong&gt; The convergence of the gradient is accelerated by a factor of 6 as compared to the sigmoid/tanh functions. It is argued that this is due to its linear, non-saturating form.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Computationally cheap:&lt;/strong&gt; The ReLU activation function simply thresholds the input so it is computationally very cheap.
+Gradient kill or Dying ReLU: As you can see that the ReLU is 0 for all negative values so it is possible that a large gradient flowing through the unit can never get activated and remain ‘dead’ for the whole time, this is also referred to as the ‘dying ReLU’ problem. So the ReLU units can be fragile during training and can “die”. Though we can tackle this problem to some extent with proper setting of the Learning rate. &lt;a href=&quot;https://arxiv.org/pdf/1611.01491v3.pdf&quot;&gt;Understanding Deep Neural Networks with Rectied Linear Units&lt;/a&gt; gives a better insight into the Relu networks.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The RelU activation function is also non-zero centered.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p class=&quot;text-center&quot;&gt;&lt;img src=&quot;/relu.png&quot; alt=&quot;A Relu graph&quot; title=&quot;Toy example&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Verdict:&lt;/strong&gt; If you are a beginner in Neural Network then the ReLU activation function should be your default choice.&lt;/p&gt;
+
+&lt;h2 id=&quot;leaky-relu-activation-function&quot;&gt;&lt;strong&gt;Leaky ReLU Activation function&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;p&gt;ReLu activation function had this major “dying ReLU” problem and the leaky ReLUs are one attempt to fix the “dying ReLU” problem. Here for all negative values of x (x &amp;lt; 0), the leaky ReLU have a very small negative slope. That is, the function computes f(x)=𝟙(x&amp;lt;0)(αx)+𝟙(x&amp;gt;=0)(x)
+where α is a small constant. In some problems this activation function works wonder but it is not always very consistent. You are more than encouraged to try this on your own.
+Interesting Point: The constant α can also be made as one of the parameters of each neuron and this can be learned by the network. Such editing are also termed as PReLU neurons, you can see a lot more about this in &lt;a href=&quot;https://arxiv.org/pdf/1502.01852.pdf&quot;&gt;Delving Deep into Rectifiers, by Kaiming He et al., 2015&lt;/a&gt;. (Warning: It has 3 pages of mathematical derivation)&lt;/p&gt;
+
+&lt;h2 id=&quot;maxout&quot;&gt;&lt;strong&gt;Maxout&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;p&gt;Other types of units have been proposed that do not have the functional form f(wTx+b)
+where a non-linearity is applied on the dot product between the weights and the data. One relatively popular choice is the Maxout neuron (introduced recently by Goodfellow et al.) that generalizes the ReLU and its leaky version. The Maxout neuron computes the function max(wT1x+b1,wT2x+b2). Notice that both ReLU and Leaky ReLU are a special case of this form (for example, for ReLU we have w1,b1=0). The Maxout neuron therefore enjoys all the benefits of a ReLU unit (linear regime of operation, no saturation) and does not have its drawbacks (dying ReLU). However, unlike the ReLU neurons it doubles the number of parameters for every single neuron, leading to a high total number of parameters. Also you need to have a bit of knowledge about Dropouts for implementing Maxout. Here is a &lt;a href=&quot;https://arxiv.org/pdf/1302.4389v4.pdf&quot;&gt;paper&lt;/a&gt; on maxout activation function.&lt;/p&gt;
+
+&lt;h1 id=&quot;conclusion&quot;&gt;Conclusion:&lt;/h1&gt;
+
+&lt;p&gt;There is always this question/doubt that every beginner Neural Network enthusiast has is “What activation function should I use?”. I would say there is always this perfect amalgamation between the type of network and the activation function and its a mix and match stuff butthe default choice should always be ReLU non-linearity but we have to be very carefull about the dying unit problem. Also you are welcomed to experiment on the Leaky ReLU or the Maxout activation function, these activation function may give you better reults but they have not established themselves in the industry. You can also try out Tanh but the reults would be worse. Sigmoid? Seriously, are you even considering using Sigmoid? If yes, Go ahead and test it :P&lt;/p&gt;
+
+&lt;h3 id=&quot;references&quot;&gt;References&lt;/h3&gt;
+
+&lt;p&gt;Refer to the following docs/videos for more information.&lt;/p&gt;
+
+&lt;p&gt;1: &lt;a href=&quot;http://cs231n.github.io&quot;&gt;CS231n: Andrej Kapathy explanation is the best&lt;/a&gt;. (I took a lot from cs231n page for writing this blog.)&lt;/p&gt;
+
+&lt;p&gt;Want to see something else added? &lt;a href=&quot;https://github.com/dyndna/lanyon-plus/issues/new&quot;&gt;Open an issue.&lt;/a&gt; Feel free to contribute.&lt;/p&gt;
+
+&lt;p&gt;P.S Jupyter notebook for each activation function is coming soon.. Stay tuned.&lt;/p&gt;</content><author><name>jamesfoster</name></author><category term="blog" /><category term="Activation Function" /><category term="Neural Network" /><category term="Sigmoid" /><category term="Tanh" /><category term="Relu" /><category term="Maxout" /><category term="Leaky Relu" /><summary type="html">A bit of Introduction</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/images/markdown.jpg" /><media:content medium="image" url="http://localhost:4000/assets/images/markdown.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
