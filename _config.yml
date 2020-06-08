@@ -34,14 +34,14 @@ disqus:
   categories: [blog, project] # only show disqus for posts that have these categories
 
 # if you don't have any of social below, comment the line
-facebook: vibrantabhi19
+facebook: vibrantabhi
 twitter: abhi_kumar07
 instagram: abhishektiwari07
 # pinterest: mypinterest
-linkedin: bhishek-kumar-74299887
+linkedin: abhishek-kumar-74299887
 # youtube: myyoutube
 # spotify: myspotify
-github: ibrantabhi19
+github: vibrantabhi19
 # gitlab: mygitlab
 # lastfm: mylastfm
 # stackoverflow: 7044681/mystackoverflow
@@ -50,10 +50,16 @@ github: ibrantabhi19
 medium: abhishekkumartiwari
 # vimeo: myvimeo
 # lanyrd: mylanyrd
-email: myemail@gmail.com
+email: vibrantabhi19@gmail.com
 
 authors:
   johndoe:
+    name: Abhishek Kumar
+    bio: Deep Learning Engineer, From Mathematics to the mountains, doing it one step at a time.
+    external-image: false
+    picture: assets/images/profile.jpg
+    twitter: abhi_kumar07
+  jamesfoster:
     name: Abhishek Kumar
     bio: Deep Learning Engineer, From Mathematics to the mountains, doing it one step at a time.
     external-image: false

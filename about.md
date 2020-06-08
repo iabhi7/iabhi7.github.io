@@ -39,6 +39,6 @@ Current Out of work Mission/Ambition: To build a tiny house in the Himalayan ran
 
 <ul>
 	<li><a href="">Writing one very soon</a></li>
-	<li><a href="https://github.com/">Ipsum Dolor</a></li>
-	<li><a href="https://github.com/">Dolor Lorem</a></li>
+<!-- 	<li><a href="https://github.com/">Ipsum Dolor</a></li>
+	<li><a href="https://github.com/">Dolor Lorem</a></li> -->
 </ul>
