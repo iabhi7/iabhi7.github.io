@@ -16,7 +16,7 @@ resume: true
 resume-external: true
 resume-url: https://drive.google.com/file/d/1N0So96h5NnqFs9HCMCmw9FIRvY7OmpbK/view?usp=sharing
 
-url: https://github.com/vibrantabhi19/assets/images
+url: https://iabhi.in
 # your url: https://USERNAME.github.io
 
 permalink: /:title/
@@ -123,7 +123,7 @@ plugins:
   - jekyll-paginate-v2
 
 jekyll-mentions:
-  base_url: https://github.com/vibrantabhi19/assets/images
+  base_url: https://github.com
 
 compress_html:
   ignore:

@@ -23,7 +23,7 @@ description: Are you a beginner in Neural Network confused about which activatio
 
 
 {:.text-center img}
-![Structure of a simple neuron]({{ site.urlimg }}/simple-neuron.png)
+![Structure of a simple neuron]({{ site.urlimg }}/assets/images/simple-neuron.png)
 <figcaption class="caption">Structure of a simple neuron</figcaption>
 
 
@@ -37,11 +37,11 @@ The basic building block of a neural network is a processing-unit which is linke
 But for better understanding lets discuss very briefly the biological system from which a large portion of this area has been inspired b
 
 {:.text-center img}
-![A image of a biological neuron]({{ site.urlimg }}/neuron.png "Toy example")
+![A image of a biological neuron]({{ site.urlimg }}/assets/images/neuron.png "Toy example")
 
 
 {:.text-center img}
-![A mathematical model of a Neuron]({{ site.urlimg }}/neuron_model.png "Toy example")
+![A mathematical model of a Neuron]({{ site.urlimg }}/assets/images/neuron_model.png "Toy example")
 
 
 The basic computational unit of the brain is a neuron. Approximately 86 billion neurons can be found in the human nervous system and they are connected with approximately 10^14 - 10^15 synapses. The diagram below shows a cartoon drawing of a biological neuron (left) and a common mathematical model (right). Each neuron receives input signals from its dendrites and produces output signals along its (single) axon. The axon eventually branches out and connects via synapses to dendrites of other neurons. In the computational model of a neuron, the signals that travel along the axons (e.g. x<sub>0</sub>) interact multiplicatively (e.g. w<sub>0</sub>x<sub>0</sub>) with the dendrites of the other neuron based on the synaptic strength at that synapse (e.g. w<sub>0</sub>). 
@@ -152,7 +152,7 @@ print l1
 The tanh non-linearity is shown on the image below. Tanh is nothing but $$ \begin{align*} & \textrm{tanh}(x) = 2\sigma(2x) - 1 \end{align*} $$. Tanh came into the picture with the goal of answering one of the problems of Sigmoid activation function(Point no 2 of Sigmoid). It is zero-centered and squashes a real-valued number to the range [-1, 1]. Like the sigmoid neuron, its activations saturate, but unlike the sigmoid neuron its output is zero-centered. Although tanh activation function is nothing but 2*sigmoid - 1, but for a better understanding of the advantages of tanh you can have a look at [this paper](http://yann.lecun.com/exdb/publis/pdf/lecun-98b.pdf) 
 
 {:.text-center img}
-![A tanh graph, see the range [-1, 1]]({{ site.urlimg }}/tanh.png "Toy example")
+![A tanh graph, see the range [-1, 1]]({{ site.urlimg }}/assets/images/tanh.png "Toy example")
 
 **Verdict:** Always prefer tanh non-linearity over the sigmoid nonlinearity. But you should avoid using Tanh too. (as there are more problems to be addressed to)
 
@@ -169,7 +169,7 @@ Gradient kill or Dying ReLU: As you can see that the ReLU is 0 for all negative 
 - The RelU activation function is also non-zero centered.
 
 {:.text-center img}
-![A Relu graph]({{ site.urlimg }}/relu.png "Toy example")
+![A Relu graph]({{ site.urlimg }}/assets/images/relu.png "Toy example")
 
 **Verdict:** If you are a beginner in Neural Network then the ReLU activation function should be your default choice.
 

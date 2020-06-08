@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-06-08T18:31:44+05:30</updated><id>http://localhost:4000/feed.xml</id><title type="html">Abhishek Kumar</title><subtitle>A blog about technology (mostly Deep Learning) and stuff related to me (mostly travelling)</subtitle><entry><title type="html">An insight into Neural network Activation functions</title><link href="http://localhost:4000/activation-function-in-neural-network/" rel="alternate" type="text/html" title="An insight into Neural network Activation functions" /><published>2016-12-17T22:48:00+05:30</published><updated>2016-12-17T22:48:00+05:30</updated><id>http://localhost:4000/activation-function-in-neural-network</id><content type="html" xml:base="http://localhost:4000/activation-function-in-neural-network/">&lt;h1 id=&quot;a-bit-of-introduction&quot;&gt;A bit of Introduction&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-06-08T18:36:20+05:30</updated><id>http://localhost:4000/feed.xml</id><title type="html">Abhishek Kumar</title><subtitle>A blog about technology (mostly Deep Learning) and stuff related to me (mostly travelling)</subtitle><entry><title type="html">An insight into Neural network Activation functions</title><link href="http://localhost:4000/activation-function-in-neural-network/" rel="alternate" type="text/html" title="An insight into Neural network Activation functions" /><published>2016-12-17T22:48:00+05:30</published><updated>2016-12-17T22:48:00+05:30</updated><id>http://localhost:4000/activation-function-in-neural-network</id><content type="html" xml:base="http://localhost:4000/activation-function-in-neural-network/">&lt;h1 id=&quot;a-bit-of-introduction&quot;&gt;A bit of Introduction&lt;/h1&gt;
 
-&lt;p class=&quot;text-center&quot;&gt;&lt;img src=&quot;/simple-neuron.png&quot; alt=&quot;Structure of a simple neuron&quot; /&gt;&lt;/p&gt;
+&lt;p class=&quot;text-center&quot;&gt;&lt;img src=&quot;/assets/images/simple-neuron.png&quot; alt=&quot;Structure of a simple neuron&quot; /&gt;&lt;/p&gt;
 &lt;figcaption class=&quot;caption&quot;&gt;Structure of a simple neuron&lt;/figcaption&gt;
 
 &lt;p&gt;The basic building block of a neural network is a processing-unit which is linked to n input-units through a set of n directed connections. The single unit model is characterized by:&lt;/p&gt;
@@ -14,9 +14,9 @@
 
 &lt;p&gt;But for better understanding lets discuss very briefly the biological system from which a large portion of this area has been inspired b&lt;/p&gt;
 
-&lt;p class=&quot;text-center&quot;&gt;&lt;img src=&quot;/neuron.png&quot; alt=&quot;A image of a biological neuron&quot; title=&quot;Toy example&quot; /&gt;&lt;/p&gt;
+&lt;p class=&quot;text-center&quot;&gt;&lt;img src=&quot;/assets/images/neuron.png&quot; alt=&quot;A image of a biological neuron&quot; title=&quot;Toy example&quot; /&gt;&lt;/p&gt;
 
-&lt;p class=&quot;text-center&quot;&gt;&lt;img src=&quot;/neuron_model.png&quot; alt=&quot;A mathematical model of a Neuron&quot; title=&quot;Toy example&quot; /&gt;&lt;/p&gt;
+&lt;p class=&quot;text-center&quot;&gt;&lt;img src=&quot;/assets/images/neuron_model.png&quot; alt=&quot;A mathematical model of a Neuron&quot; title=&quot;Toy example&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;The basic computational unit of the brain is a neuron. Approximately 86 billion neurons can be found in the human nervous system and they are connected with approximately 10^14 - 10^15 synapses. The diagram below shows a cartoon drawing of a biological neuron (left) and a common mathematical model (right). Each neuron receives input signals from its dendrites and produces output signals along its (single) axon. The axon eventually branches out and connects via synapses to dendrites of other neurons. In the computational model of a neuron, the signals that travel along the axons (e.g. x&lt;sub&gt;0&lt;/sub&gt;) interact multiplicatively (e.g. w&lt;sub&gt;0&lt;/sub&gt;x&lt;sub&gt;0&lt;/sub&gt;) with the dendrites of the other neuron based on the synaptic strength at that synapse (e.g. w&lt;sub&gt;0&lt;/sub&gt;).&lt;/p&gt;
 
@@ -118,7 +118,7 @@ $$&lt;/p&gt;
 &lt;p&gt;The tanh non-linearity is shown on the image below. Tanh is nothing but &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
 \begin{align*} &amp; \textrm{tanh}(x) = 2\sigma(2x) - 1 \end{align*} %]]&gt;&lt;/script&gt;. Tanh came into the picture with the goal of answering one of the problems of Sigmoid activation function(Point no 2 of Sigmoid). It is zero-centered and squashes a real-valued number to the range [-1, 1]. Like the sigmoid neuron, its activations saturate, but unlike the sigmoid neuron its output is zero-centered. Although tanh activation function is nothing but 2*sigmoid - 1, but for a better understanding of the advantages of tanh you can have a look at &lt;a href=&quot;http://yann.lecun.com/exdb/publis/pdf/lecun-98b.pdf&quot;&gt;this paper&lt;/a&gt;&lt;/p&gt;
 
-&lt;p class=&quot;text-center&quot;&gt;&lt;img src=&quot;/tanh.png&quot; alt=&quot;A tanh graph, see the range [-1, 1]&quot; title=&quot;Toy example&quot; /&gt;&lt;/p&gt;
+&lt;p class=&quot;text-center&quot;&gt;&lt;img src=&quot;/assets/images/tanh.png&quot; alt=&quot;A tanh graph, see the range [-1, 1]&quot; title=&quot;Toy example&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Verdict:&lt;/strong&gt; Always prefer tanh non-linearity over the sigmoid nonlinearity. But you should avoid using Tanh too. (as there are more problems to be addressed to)&lt;/p&gt;
 
@@ -139,7 +139,7 @@ Gradient kill or Dying ReLU: As you can see that the ReLU is 0 for all negative 
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p class=&quot;text-center&quot;&gt;&lt;img src=&quot;/relu.png&quot; alt=&quot;A Relu graph&quot; title=&quot;Toy example&quot; /&gt;&lt;/p&gt;
+&lt;p class=&quot;text-center&quot;&gt;&lt;img src=&quot;/assets/images/relu.png&quot; alt=&quot;A Relu graph&quot; title=&quot;Toy example&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Verdict:&lt;/strong&gt; If you are a beginner in Neural Network then the ReLU activation function should be your default choice.&lt;/p&gt;
 
