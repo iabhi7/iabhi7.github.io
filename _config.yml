@@ -34,14 +34,14 @@ disqus:
   categories: [blog, project] # only show disqus for posts that have these categories
 
 # if you don't have any of social below, comment the line
-facebook: iabhi007
-twitter: abhi_kumar07
-instagram: abhishektiwari07
+twitter: iabhi0
 # pinterest: mypinterest
 linkedin: iabhi7
 # youtube: myyoutube
 # spotify: myspotify
 github: iabhi7
+facebook: iabhi007
+instagram: abhishektiwari07
 # gitlab: mygitlab
 # lastfm: mylastfm
 # stackoverflow: 7044681/mystackoverflow
@@ -50,7 +50,7 @@ github: iabhi7
 medium: abhishekkumartiwari
 # vimeo: myvimeo
 # lanyrd: mylanyrd
-email: vibrantabhi19@gmail.com
+email: me@iabhi.in
 
 authors:
   johndoe:
