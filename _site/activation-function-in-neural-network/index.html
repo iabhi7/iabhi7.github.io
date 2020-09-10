@@ -3,6 +3,17 @@
 <head>
 
     
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-96100319-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-96100319-3');
+</script>
+
+    
 
 <!--     <meta charset="utf-8">
     <meta name=viewport content="width=device-width, initial-scale=1">
@@ -16,7 +27,7 @@
 
     <!-- Begin Jekyll SEO tag v2.6.1 -->
 <title>An insight into Neural network Activation functions | Abhishek Kumar</title>
-<meta name="generator" content="Jekyll v3.8.5" />
+<meta name="generator" content="Jekyll v3.9.0" />
 <meta property="og:title" content="An insight into Neural network Activation functions" />
 <meta name="author" content="jamesfoster" />
 <meta property="og:locale" content="en_US" />
@@ -34,7 +45,7 @@
 <meta name="twitter:site" content="@" />
 <meta name="twitter:creator" content="@jamesfoster" />
 <script type="application/ld+json">
-{"description":"Are you a beginner in Neural Network confused about which activation function you should use, well here is a brief of the common activation functions that are used in Neural Network.","author":{"@type":"Person","name":"jamesfoster"},"@type":"BlogPosting","url":"http://localhost:4000/activation-function-in-neural-network/","image":"http://localhost:4000/assets/images/markdown.jpg","headline":"An insight into Neural network Activation functions","dateModified":"2016-12-17T22:48:00+05:30","datePublished":"2016-12-17T22:48:00+05:30","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/activation-function-in-neural-network/"},"@context":"https://schema.org"}</script>
+{"url":"http://localhost:4000/activation-function-in-neural-network/","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/activation-function-in-neural-network/"},"image":"http://localhost:4000/assets/images/markdown.jpg","author":{"@type":"Person","name":"jamesfoster"},"headline":"An insight into Neural network Activation functions","dateModified":"2016-12-17T22:48:00+05:30","description":"Are you a beginner in Neural Network confused about which activation function you should use, well here is a brief of the common activation functions that are used in Neural Network.","datePublished":"2016-12-17T22:48:00+05:30","@type":"BlogPosting","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -504,7 +515,13 @@ pre { box-sizing: border-box; margin: 0 0 1.75em 0; width: 100%; padding: 5px 10
 
         
             <li class="item">
-                <a class="link" href="https://drive.google.com/file/d/1N0So96h5NnqFs9HCMCmw9FIRvY7OmpbK/view?usp=sharing">Résumé</a>
+                <a class="link" href="https://drive.google.com/file/d/1EW8qdt3z-fsRh_OLrv4DG3W3Qmy6GCgV/view?usp=sharing">Résumé</a>
+            </li>
+        
+
+        
+            <li class="item">
+                <a class="link" href="https://pictures.iabhi.in">Photography</a>
             </li>
         
     </ul>
@@ -595,8 +612,7 @@ Here are links of some research paper that happened in the 2000’s, (especially
 \end{align</em>}
 $$</p>
 
-<p>The sigmoid non-linearity has the mathematical form <script type="math/tex">% <![CDATA[
-\begin{align*} & \sigma(x) = 1/(1+e^{-x}) \end{align*} %]]></script> and is shown in the image above on the left.</p>
+<p>The sigmoid non-linearity has the mathematical form \(\begin{align*} &amp; \sigma(x) = 1/(1+e^{-x}) \end{align*}\) and is shown in the image above on the left.</p>
 
 <p>The sigmoid function takes a real-valued number and “squashes” it into range between 0 and 1. And this “Squasing” technique is one of the major drawbacks of the sigmoid function. In particular, large negative numbers become 0 and large positive numbers become 1. Let’s see the major drawback of the Sigmoid activation function in detail:</p>
 
@@ -623,30 +639,30 @@ $$</p>
 </span><span class="k">def</span> <span class="nf">nonlin</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">deriv</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
   <span class="k">if</span><span class="p">(</span><span class="n">deriv</span><span class="o">==</span><span class="bp">True</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">x</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">x</span><span class="p">)</span>
-    <span class="k">return</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="p">))</span>
+    <span class="k">return</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">np</span><span class="p">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="p">))</span>
     
 <span class="c1"># input dataset
 # feel free to play with the imput dataset
-</span><span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>  <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span>
+</span><span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">([</span>  <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span>
                 <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span>
                 <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span>
                 <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="p">])</span>
     
 <span class="c1"># output dataset            
-</span><span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span><span class="o">.</span><span class="n">T</span>
+</span><span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]]).</span><span class="n">T</span>
 
 <span class="c1"># seed random numbers to make calculation
 # deterministic (just a good practice)
-</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</span><span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 
 <span class="o">&lt;</span><span class="err">!</span><span class="o">--</span> <span class="c1"># initialize weights randomly with mean 0 --&gt;
-</span><span class="n">syn0</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span> <span class="o">-</span> <span class="mi">1</span>
+</span><span class="n">syn0</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">random</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span> <span class="o">-</span> <span class="mi">1</span>
 
 <span class="k">for</span> <span class="nb">iter</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="mi">10000</span><span class="p">):</span>
 
     <span class="c1"># forward propagation
 </span>    <span class="n">l0</span> <span class="o">=</span> <span class="n">X</span>
-    <span class="n">l1</span> <span class="o">=</span> <span class="n">nonlin</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">l0</span><span class="p">,</span><span class="n">syn0</span><span class="p">))</span>
+    <span class="n">l1</span> <span class="o">=</span> <span class="n">nonlin</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">dot</span><span class="p">(</span><span class="n">l0</span><span class="p">,</span><span class="n">syn0</span><span class="p">))</span>
 
     <span class="c1"># how much did we miss?
 </span>    <span class="n">l1_error</span> <span class="o">=</span> <span class="n">y</span> <span class="o">-</span> <span class="n">l1</span>
@@ -656,7 +672,7 @@ $$</p>
 </span>    <span class="n">l1_delta</span> <span class="o">=</span> <span class="n">l1_error</span> <span class="o">*</span> <span class="n">nonlin</span><span class="p">(</span><span class="n">l1</span><span class="p">,</span><span class="bp">True</span><span class="p">)</span>
 
     <span class="c1"># update weights
-</span>    <span class="n">syn0</span> <span class="o">+=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">l0</span><span class="o">.</span><span class="n">T</span><span class="p">,</span><span class="n">l1_delta</span><span class="p">)</span>
+</span>    <span class="n">syn0</span> <span class="o">+=</span> <span class="n">np</span><span class="p">.</span><span class="n">dot</span><span class="p">(</span><span class="n">l0</span><span class="p">.</span><span class="n">T</span><span class="p">,</span><span class="n">l1_delta</span><span class="p">)</span>
 
 <span class="k">print</span> <span class="s">"Output After Training:"</span>
 <span class="k">print</span> <span class="n">l1</span></code></pre></figure>
@@ -665,8 +681,7 @@ $$</p>
 
 <h2 id="tanh-activation-function"><strong>Tanh Activation function</strong></h2>
 
-<p>The tanh non-linearity is shown on the image below. Tanh is nothing but <script type="math/tex">% <![CDATA[
-\begin{align*} & \textrm{tanh}(x) = 2\sigma(2x) - 1 \end{align*} %]]></script>. Tanh came into the picture with the goal of answering one of the problems of Sigmoid activation function(Point no 2 of Sigmoid). It is zero-centered and squashes a real-valued number to the range [-1, 1]. Like the sigmoid neuron, its activations saturate, but unlike the sigmoid neuron its output is zero-centered. Although tanh activation function is nothing but 2*sigmoid - 1, but for a better understanding of the advantages of tanh you can have a look at <a href="http://yann.lecun.com/exdb/publis/pdf/lecun-98b.pdf">this paper</a></p>
+<p>The tanh non-linearity is shown on the image below. Tanh is nothing but \(\begin{align*} &amp; \textrm{tanh}(x) = 2\sigma(2x) - 1 \end{align*}\). Tanh came into the picture with the goal of answering one of the problems of Sigmoid activation function(Point no 2 of Sigmoid). It is zero-centered and squashes a real-valued number to the range [-1, 1]. Like the sigmoid neuron, its activations saturate, but unlike the sigmoid neuron its output is zero-centered. Although tanh activation function is nothing but 2*sigmoid - 1, but for a better understanding of the advantages of tanh you can have a look at <a href="http://yann.lecun.com/exdb/publis/pdf/lecun-98b.pdf">this paper</a></p>
 
 <p class="text-center"><img src="/assets/images/tanh.png" alt="A tanh graph, see the range [-1, 1]" title="Toy example" /></p>
 

@@ -35,5 +35,11 @@
                 <a class="link" href="{% if site.resume-external %}{{ site.resume-url }}{% else %}{{ site.url }}/{{ site.resume-url }}{% endif %}">Résumé</a>
             </li>
         {% endif %}
+
+        {% if site.pictures == true %}
+            <li class="item">
+                <a class="link" href="{% if site.pictures-external %}{{ site.pictures-url }}{% else %}{{ site.url }}/{{ site.pictures-url }}{% endif %}">Photography</a>
+            </li>
+        {% endif %}
     </ul>
 </nav>
